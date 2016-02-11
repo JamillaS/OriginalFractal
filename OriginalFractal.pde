@@ -12,17 +12,18 @@ public void draw()
 
 public void fractal(int x, int y, int len)
 {
-	if(len >= 5)
-	{
-		ellipse(x, y, len, len);			//(200, 200, 200);
-		fractal(x + len/4, y - len/4, len/2);  //(300, 100, 50);
-		fractal(x + len/4, y + len/4, len/2);  //(300, 300, 50);
-		fractal(x - len/4, y - len/4, len/2);
-		fractal(x - len/4, y + len/4, len/2);
+	if(len >= 20)
+	{	
+		noFill();
+		ellipse(x ,y, len, len);
+		fractal(x/2, y/2, len/4);
+		fractal(x + x/2, y/2, len/4);
 	}
 	else
 	{
-		//ellipse(x ,y,x + len,x + len);
+		noFill();
+		ellipse(x ,y, len, len);  //(300, 100, )
+
 	}
 	
 }
