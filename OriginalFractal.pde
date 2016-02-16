@@ -15,14 +15,17 @@ public void fractal(int x, int y, int len)
 	if(len >= 20)
 	{	
 		noFill();
+		
+		fractal(x/2, y/2, len/2);
+		fractal(x/2 + len/2,y/2 + len/2, len/2);
+		//fractal(x/2, y + y/2, len/2);
+		//fractal(x + x/2, y+ y/2, len/2);
 		ellipse(x ,y, len, len);
-		fractal(x/2, y/2, len/4);
-		fractal(x + x/2, y/2, len/4);
 	}
 	else
 	{
 		noFill();
-		ellipse(x ,y, len, len);  //(300, 100, )
+		ellipse(x ,y, len/2, len/2);  //(300, 100, )
 
 	}
 	
